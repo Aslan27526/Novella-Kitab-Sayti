@@ -1,75 +1,93 @@
 <!-- Navbar -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar" style='
+{% load static i18n %}
+<nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar" style='
     z-index: 9999;'>
     <div class="container">
 
-      <!-- Brand -->
-      <a class="navbar-brand waves-effect" href="/">
-        <strong class="blue-text">Novella</strong>
-      </a>
+        <!-- Brand -->
+        <a class="navbar-brand waves-effect" href="/">
+            <strong class="blue-text">Novella</strong>
+        </a>
 
-      <!-- Collapse -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <!-- Links -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-        <!-- Left -->
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link waves-effect" href="/about" target="_blank">Haqqımızda</a>
-          </li>
-          
-        </ul>
+            <!-- Left -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home
+            <span class="sr-only">(current)</span>
+          </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect" href="/about" target="_blank">Haqqımızda</a>
+                </li>
 
-        <!-- Right -->
-        <ul class="navbar-nav nav-flex-icons">
+            </ul>
 
-        {% if request.user.is_authenticated %}
- 
-          <li class="nav-item">
-            <a class="nav-link waves-effect" href="{% url 'books:favorite_list' %}">
-              <i class="fas fa-heart"></i>
-              <span class="clearfix d-none d-sm-inline-block"> Sevimlilər </span>
-            </a>
-          </li>            
-          <li class="nav-item">
-            <a class="nav-link waves-effect" href="#">
-              <i class='fas fa-user-circle' ></i>
-              <span class="clearfix d-none d-sm-inline-block"> {{user}} </span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link waves-effect" href="{% url 'user:logout' %}">
-              <span class="clearfix d-none d-sm-inline-block"> Logout </span>
-            </a>
-          </li>
-            {% else %}
+            <!-- Right -->
+            <ul class="navbar-nav nav-flex-icons">
 
-            <li class="nav-item">
-            <a class="nav-link waves-effect" href="{% url 'user:login' %}">
-              <span class="clearfix d-none d-sm-inline-block"> Login </span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link waves-effect" href="{% url 'user:register' %}">
-              <span class="clearfix d-none d-sm-inline-block"> Signup </span>
-            </a>
-          </li>
-          {% endif %}
+                {% if request.user.is_authenticated %}
 
-        </ul>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect" href="{% url 'books:favorite_list' %}">
+                        <i class="fas fa-heart"></i>
+                        <span class="clearfix d-none d-sm-inline-block"> Sevimlilər </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect" href="#">
+                        <i class='fas fa-user-circle'></i>
+                        <span class="clearfix d-none d-sm-inline-block"> {{user}} </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect" href="{% url 'user:logout' %}">
+                        <span class="clearfix d-none d-sm-inline-block"> Logout </span>
+                    </a>
+                </li>
+                {% else %}
 
-      </div>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect" href="{% url 'user:login' %}">
+                        <span class="clearfix d-none d-sm-inline-block"> Login </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect" href="{% url 'user:register' %}">
+                        <span class="clearfix d-none d-sm-inline-block"> Signup </span>
+                    </a>
+                </li>
+
+                {% endif %}
+                <li class="nav-item">
+                    <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                        <input type="hidden" name='next' value='{{ redirect_to }}'>
+                        <select name="language" id="" class="form-control form-control-sm">
+                        
+                        {% get_available_languages as LANGUAGES %}
+                        {% get_language_info_list for LANGUAGES as languages %}
+
+                        {% for language in languages %}
+
+                        <option type='submit' value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+                             {{ language.name_local }} ({{ language.code }})
+                        </option>
+              {% endfor %}
+            </select>
+                        <input type="submit" value="Go">
+                    </form>
+                </li>
+            </ul>
+
+        </div>
 
     </div>
-  </nav>
-  <!-- Navbar -->
+</nav>
+<!-- Navbar -->

@@ -10,6 +10,12 @@ import random
 
 
 def about(request):
+    from django.utils import translation
+    #user_language = 'en'
+    # translation.activate(user_language)
+    # request.session[translation.LANGUAGE_SESSION_KEY] =
+    if translation.LANGUAGE_SESSION_KEY in request.session:
+        del request.session[translation.LANGUAGE_SESSION_KEY]
     return render(request, 'about.html')
 
 

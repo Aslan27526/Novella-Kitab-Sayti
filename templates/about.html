@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% load static i18n %}
+
+{% block about_page %}
+<link rel="stylesheet" href="{% static 'css/framework.css' %}">
+<link rel="stylesheet" href="{% static 'css/about-us.css' %}">
+{% endblock about_page %}
+
+{% block content %}
+
+  <div id="carousel-example-1z" class="carousel slide carousel-fade pt-4" data-ride="carousel">
+
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+
+      <!--First slide-->
+      <div class="carousel-item active">
+        <div class="view" style="background-image: url('https://www.wallpaperflare.com/static/87/362/502/books-stack-book-store-stack-of-books-wallpaper.jpg'); background-repeat: no-repeat; background-size: cover;background-attachment: fixed;   background-position: center center;
+        background-size: 1000px 1000px
+">
+
+          <!-- Mask & flexbox options-->
+          <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
+
+            <!-- Content -->
+            <div class="text-center white-text mx-5 wow fadeIn">
+                <strong>
+   <h1 style="text-shadow: 0 2px 0 #ccc,
+        0 2px 0 #c9c9c9,
+        0 3px 0 #bbb,
+        0 4px 0 #b9b9b9,
+        0 5px 0 #aaa,
+        0 6px 1px rgba(0,0,0,.1),
+        0 0 5px rgba(0,0,0,.1),
+        0 1px 3px rgba(0,0,0,.3),
+        0 3px 5px rgba(0,0,0,.2),
+        0 5px 10px rgba(0,0,0,.25),
+        0 10px 10px rgba(0,0,0,.2),
+        0 20px 20px rgba(0,0,0,.15);
+        color:green;
+        font-size: 100px;
+        ">Novella Kitab Evi</h1>
+                </strong>
+
+              <p>
+                <h4><strong>Kitabların kirayəsi</strong> <i class="fas fa-book "></i></h4>
+              </p>
+              </div>
+            <!-- Content -->
+
+          </div>
+          <!-- Mask & flexbox options-->
+
+        </div>
+      </div>
+      <!--/First slide-->
+
+  </div>
+<div class="wrapper row2">
+  <div id="container" class="clear">
+    <div id="about-us" class="clear">
+      <section id="about-intro" class="clear">
+        <h2> {% trans 'Haqqımızda' %}</h2>
+        <p>In sed neque id libero pretium luctus. Vivamus faucibus. Ut vitae elit. In hac habitasse platea dictumst. Proin et nisl ac orci tempus luctus. Aenean lacinia justo at nisi. Vestibulum sed eros sit amet nisl lobortis commodo. Suspendisse nulla. Vivamus ac lorem. Aliquam pulvinar purus at felis. Quisque convallis nulla id ipsum. Praesent vitae urna. Fusce blandit nunc nec mi. Praesent vestibulum hendrerit ante.</p>
+        <p>Vivamus accumsan. Donec molestie pede vel urna. Curabitur eget sem ornare felis gravida vestibulum.Sed pulvinar, tellus in venenatis vehicula, lorem magna dignissim erat, in accumsan ante lorem sit amet lorem.</p>
+      </section>
+
+    </div>
+    <hr>
+    <div id="contact" class="text-center">
+      <section id="about-intro" class="clear">
+        <h2 class>Bizimlə əlaqə</h2>
+        <p><strong>Ünvan:</strong> In sed neque id libero pretium luctus. Vivamus faucibus. Ut vitae elit. In hac habitasse platea dictumst. Proin et nisl ac orci tempus luctus. Aenean lacinia justo at nisi. Vestibulum sed eros sit amet nisl lobortis commodo. Suspendisse nulla. Vivamus ac lorem. Aliquam pulvinar purus at felis. Quisque convallis nulla id ipsum. Praesent vitae urna. Fusce blandit nunc nec mi. Praesent vestibulum hendrerit ante.</p>
+        <h4><strong>Əlaqə nömrəsi(+994)505555555</h4></strong>
+      </section>
+
+    </div>
+  </div>
+</div>
+{% endblock content %}

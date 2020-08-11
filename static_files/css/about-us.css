@@ -1,0 +1,27 @@
+/*
+HTML 5 Template Name: 
+File: About Us - 11 CSS
+Author: OS Templates
+Author URI: https://www.os-templates.com/
+Licence: <a href="https://www.os-templates.com/template-terms">Website Template Licence</a>
+*/
+
+#about-us{display:block; width:100%; line-height:1.6em;}
+#about-us h2{margin-bottom:50px; padding-bottom:40px; font-size:80px; text-align:center; text-transform:uppercase; border-bottom:1px solid #CCCCCC;} /* DEMO USE ONLY - CAN BE DELETED */
+
+#about-us #about-intro{margin-bottom:50px;}
+#about-us #about-intro p{margin:20px 0 0 0; padding:0;}
+#about-us #about-intro p:first-child{margin-top:0;}
+
+#about-us #team{margin-bottom:0;}
+#about-us #team ul{margin:0; padding:0; list-style:none;}
+#about-us #team ul li{margin-bottom:30px;}
+#about-us #team ul li figure{position:relative; text-align:center;}
+#about-us #team ul li figure img{padding:9px; border:1px solid #CCCCCC;}
+#about-us #team ul li figure figcaption{display:none; position:absolute; top:10px; left:10px; width:280px; height:200px; overflow:hidden; color:#FFFFFF; background-color:#000000; background:hsla(0, 0%, 0%, 0.8);}
+#about-us #team ul li:hover figure figcaption{display:block;}
+#about-us #team ul li figure figcaption p{margin:15px 15px 0 15px; padding:0;}
+#about-us #team ul li figure figcaption p:first-child{margin-top:35px;}
+#about-us #team ul li figure figcaption .team_name{font-weight:bold;}
+#about-us #team ul li figure figcaption .team_title{margin:0; font-size:11px; line-height:normal;}
+#about-us #team ul li figure figcaption .team_description{text-align:left;}
